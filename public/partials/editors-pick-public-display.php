@@ -1,16 +1,64 @@
-<?php
 
-/**
- * Provide a public-facing view for the plugin
- *
- * This file is used to markup the public-facing aspects of the plugin.
- *
- * @link       https://neevalex.com
- * @since      1.0.0
- *
- * @package    Editors_Pick
- * @subpackage Editors_Pick/public/partials
- */
-?>
+<?php function ep_output_html($title, $data) { ?>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<div class="editors-pick-wrapper">
+
+    <div class="rc-bg-top-product-wrap" data-value="87" data-effectiveness="97" data-versatility="96" data-accuracy="94" data-application="98" data-default="10">
+        <div class="rc-bg-badge"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABCCAMAAADUivDaAAACLlBMVEUAAAADlsEFqdkBgacBg6n0uQQBgacGqdgBgacGqdj0uQQBgaf0uQT0uQQBgacGqdj0uQT0uQQGqdgGqdgBgacEqdkGqdgBgacGqdgFqdkBgacBgaf0uQQHqtcBgaf0uQQGqdj0uQQFqdj0uQT0uQQGqdgBgacBgacGqdj0uQQGqdj0uQQBgacGqdgBgaf0uQT0uQQBgacBgacGqdj0uQT0uQQGqdgBgacBgacBgacBgacGqdgBgacGqdgBgacBgacGqdgBgacGqdgGqdgBgacBgacGqdgDqdn0uQT/2CMBqdot0P/0uQQGqdgBgac0NDTMrydmXTD/qQSZhizyziRAPjPmwyUrz/4CqNhzZy/ZuSaZxWxNSDKAcS6/pSir1Xv01y2Mey2mkCqzmikBjrf92CX/vRH/uA0myvkgxfQVuuoCnMl407Cj1YRZUjE80fAav+4RtuYKr94HrNsCn8wBk7681Wnr1zb62Cf/0R7/zRv/sQgpzfwz0PgNsuECpdQRrc4CoM4cr8cCmsZu07wBkbsBiLABha0Bg6qC06Zbuplgu5ZqvY+zylrAzVDl1z/m0zX21in/xhYix/YQteQLq9MCo9ECl8N007Q7tLCM1J1WuZ2Kw3eRxHK31W+oyGGuyV3L1lnW1k7Nz0fZ0T/32Cz/xxgv0P0fw/JB0epF0eZb0s9d0s1ItqdRuKFzvoh2v4ay1XOgxmfB1mTE1mG6y1XQ1lTh10Li0zj/yBhlwMNoAAAASXRSTlMACjMc/vnw6+XMwrimQjEcEQP58+nBtrFzYWBPCP705OPi3tXT0dHDrJCPjoyFgnl1dG5KMS8VFPfNxq6po6KhmZhjWEgoIhIJk4gQfwAABIpJREFUWMPNlQWT2zAQhcvMzMzMzCy7juTYTpu0SQNNyldmZmZmZub233VXsqrUtW5cmumbOUe6xN9od9+uqvxzNe5TY0L1PyJU62LFYnUa/QGgpWUBIjZm2G8CZgMAEahe7X89BcPb9OlocV2OcbWYNHTGLyRlVl1Lav0T49KhmNS4yBCMQGjtDtMw5l8+LBn1oyJq+ydYvtQ0AQGQFYuPiHCiIibyAyybZ6IMXxsQMTlyMRGxnAMUYj8iojukFSDWBRCLo6cCNd0CzfsBMb8GIH7BHW1DEBjHzOjG7hYSyBEMJFIuqg6f0sVCrQkgNsZQdaa2r1rp+6Pajm9uCe2aF0DMlybt1LrdaF1ftOlpKVsCQSIkA84h1XtoqNX7qcZYe14CEKEg+xfXkJABOjNgGpejLQMIRdlwUDRM6zAEhrFrzVITpEegLqHLeumaawe8s/r9ltPXHocgXj/YcnIPLlboGq65b6dV5O5m8vZnxDty5hS5KTuuVhjCApmg0/fMnZvIrUW+Fvi6TU52NO5/QcTeGCgM0cw/RXYTBJMlPykLQdw5qxDaXOAp4HHrZ8RtePn+mUoDwcbAemx6uNM0rxFf27bJ1RvDuHj2pExnnTAEzly01FFyxTRXEl9LlsjVccM4Tk7I6TNWZ601WNSHnxRiazy+1V8eM4xTZ/fIjmutM/hyk1f1gEBsO1faHo9vL53bJhAvyQIxwHQGn4buBAKU4/NOjvga9/WIIy4+yO7jCLR4O93QxapiNlZdIahHgnCOb67fgEygdusHMRpjmYm6S1YRrhISSmJ9k5wyuFboaoolkaP/6eaiXw9E+DUpntknEAf1s7wNjgrR6C+2EK7t8VIpvl2st1z1+x2n6DDN2LJEJKgDRXGKrVBXcYridUPGAYKhpY3kAgJ4SgM6UX4n9a70+pAzZ2WxHFAEbxqqHu20F0BzdQyIJasI2VdG+WVQS38RDFTZAD37IAkfoRbyEDiAB1Vyj6A11qnp+3wzAjaLUqiKdsJ7RH8M0WtSmxBxRwHEtBlU6XVYW2UUxU16QxH4lVZHnwnyK/r/EA3mShGQTSllNvXsDGG4ABH4wC38M0+ok4JdgpC539WgSpPOPyIcJ2EvdGyaAUQhTW0n4S10KihjNF1BEwudpOfYbhmia5MqVRoGEAVi28SlSUAQRh3iUAbbNKP5JE0UEklYkjJEQwyl7w8IO4cI4tkKAeemsKWwISSR9mhKIfrzbMzpXo7Ah+3mqSMREAHL0TyjBa8CvswUCpR9R/ToIDI6omYwnZQmXYkgOdxidh2aJ6SC0oXfc1FzpKzK4O+IFGPMhQf8yGUu/EEQ+BRbluI/IUQihlSRalqPIyJLIuo1/XsIFUh0qUCC6VRiFFzFHZIGa0Fa3QoviFDp7ABFDUGkkzQDCJvm0jlAJLGUSqqowlqhCJanBXAIzfHdQvhUClgLDB6KwPrbdoo6PiIZREiDQ5tpEHlGMBeexzIZHkgmgJBths2uCYRwRMaDxGI6PTSlVHmza0YOmhGdmEJaivszwdz/evD9OeIbWt5hWhDJe3MAAAAASUVORK5CYII=" alt="icon"></div>
+        <div class="rc-bg-product-helper">
+            <div class="rc-bg-product-image-wrap"><img class="rc-lazy review-image fade" data-width="160" data-height="160" alt="<? echo $title; ?>" src="<? echo $data['ep_image']; ?>"></div>
+            <div class="product-rating-info-wrap">
+                <div class="rc-bg-product-rating"><? echo $data['ep_score']; ?>/100 <span>our score</span></div>
+            </div>
+            <div class="rc-bg-info-wrapper">
+                <div class="rc-bg-winner-name"><? echo $title; ?></div>
+                <div class="rc-bg-winner-description"><? echo $data['ep_description'] ?></div>
+                <div class="rc-bg-winner-list-title"><? echo __('Why is it better?', 'editors-pick' ); ?></div>
+                <div class="rc-bg-winner-list">
+
+                <? foreach ($data['ep_benefits'] as $benefit) { ?>
+                <p><? echo $benefit['ep_benefit']; ?></p>
+                <? } ?>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="rc-bg-product-button-wrap">
+            <a class="easyazon-link data-title="<? echo $title; ?>" href="<? echo $data['ep_url']; ?>" rel="nofollow" target="_blank"><span>Check this product</span></a> </div>
+    </div>
+
+    <div class="bg-features-item-wrap">
+        <div class="bg-features-item">
+            <div class="bg-item-wrapper">
+                <div class="bg-features-image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAcCAYAAAAN3M1lAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4JpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MEY3NDcyNEMzNDFFNjExQjU4QkJEMkUzMDFDQ0VFNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQTBGMkM5QjkzRTIxMUU4OERGQUM4NUIzOUU2RjBENyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQTBGMkM5QTkzRTIxMUU4OERGQUM4NUIzOUU2RjBENyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNS41IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjI2YjQ3YzYxLWU3ODMtZTU0MC1hYjdiLWQ2OWE4MmNmMDJhYiIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmZiNDk0NDFlLTkwZTUtMTFlOC04MjhhLWJjZWE0Njk1Y2I3MiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pkldb5gAAAIYSURBVHjaYmRAA58tM0r/3XnS/P/1B3YGegNWlv/MBqoX/t196sCI4ijdOJe/V+7vZvj/n2EgAbOp5nkmZAFGIb4qejiKkZeLgUlBAmQfhC8qwMC1qomBc1IBAwMTE8PfC7cNWEASVxhsQbTr399/NOgRIlwb2hlYnIwY/j15zfBZNoiBNcyJgTXUESz3a+F2hr9nbzKyAB0lCeTvAmKdf3/+MjDSwWE/CicxMBupMfy78xTM/7PnDAMwXTH8f/GO4d/1h5BQBDpsHZAOBHGkzTQYGE9dZxgMAJTGvBkGIQClLTYY52+IE4PQzr5B4zAEYGNhYBTgGYQOQwMvCiYRX/YAs75oXQJ9HPZ24hriC215Cao6jIlhkIJRh1E1jZEL3j74wPAOiEkBoipCDAIyfLR12MPTzxiubr1Nkh7DEE3aO8woVAuMB11U7uk5znBwyimS9LhV2DDYZhjT1mEuJZZgPOhC7OL6Gwy3Dz4kSY+muzKDtqcKcQ5T2D+R+HKHA94WYJDSFWMgtWEnqSWKO8T+vv2IIsntYEhWiIGyPghTAH6hFLCfNx0dLOXrVhSH/bh4h+FF4WSG/3//DaSjrgBxNqhpjdEtYgX2YLgdjRiY+bnp5ho2Jal9QrnBPUDmbkZGxj8gh70AcsQHQfRl6zAcnoZciQ+GtjQocJahty66gbgCiF8NgINAiXkvEDsCQwul1gcIMAD5rJLCjQE+5gAAAABJRU5ErkJggg==" alt="Researched Sources"></div>
+                <div class="bg-features-count"><? echo $data['ep_sources']; ?></div>
+                <div class="bg-features-title">Researched Sources</div>
+            </div>
+        </div>
+        <div class="bg-features-item">
+            <div class="bg-item-wrapper">
+                <div class="bg-features-image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAZCAYAAADaILXQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4JpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MEY3NDcyNEMzNDFFNjExQjU4QkJEMkUzMDFDQ0VFNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjMxRkFEQTkzRTIxMUU4OERGQUM4NUIzOUU2RjBENyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjMxRkFEOTkzRTIxMUU4OERGQUM4NUIzOUU2RjBENyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNS41IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjI2YjQ3YzYxLWU3ODMtZTU0MC1hYjdiLWQ2OWE4MmNmMDJhYiIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmZiNDk0NDFlLTkwZTUtMTFlOC04MjhhLWJjZWE0Njk1Y2I3MiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pp5ePtEAAAJSSURBVHjatFQ9bxNBEH2zu+fokiBQhIIQNFCkooKGxqGgSkNBQUHDH+Bv8D/4A7QgBFUQogIkkBBCAoQEEh0SCsS5r+Hteu98ufhsK8Ejj727vn1v5s3cyGtsPwRwl27pio7VBxVXGvf1WYnKnEnSH86YO4VWrwTS3DooSxiu7tETuokER1yn7EnlXYzIxdQmuwQeVno4Ng/4G3NMes7rLEjgSPCUvzerDniFBUxaJNI5jwTpqkueWMGORuEMjm0SaxGAwQ+cmGTNDh4nxt72/7lFIDSuhKt6LyEywV4+QqUVCepz/5Q+4tnQtfVzjMNCj7SMHtJYQ7QaukBRaok/eRZoi1DvhnjLtcXP+ecoxKO9xdNOS47JhLeUt6t2xvtuDKxYIe8zbOEtLmAd2VRw6WRS2wFzPsem28E7DNj9ecg/au6ZR1xew3dcwc9Ahpntp00xtS4qQT150eoRN9FIscf4fyEN2s+ztvYedoXxrtElUssEXAPgV2zgAxP0D80Hn3x7Wc4ytPOUxoZBYSeRe1n8A0N8wQ18niFKf/fUJDl93LKCpqCOyb3EJXzEJlYXiLxNlTHSDfzFNj6FxsjbkY91MyEtL0/C3eLQvohCKbM4Vk0zKiK4BGk2qdtp7PcOqj4rmxewClim3S1elgH5d3EZb3r6fNZo8Fr7rG/hfci6mFbQ6/iGq+x1M7ek3b6XELUJWdgm8+b19wQpS3GKNHqMGenvZzFidMHrt6s4wRTu1uoE83y+LR3cLQnbevD1JYGrj/oB/f5/Bn5Bf/5PgAEArKraOKoVzecAAAAASUVORK5CYII=" alt="Reviews Considered"></div>
+                <div class="bg-features-count"><? echo $data['ep_reviews']; ?></div>
+                <div class="bg-features-title">Reviews Considered</div>
+            </div>
+        </div>
+        <div class="bg-features-item">
+            <div class="bg-item-wrapper">
+                <div class="bg-features-image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4JpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MEY3NDcyNEMzNDFFNjExQjU4QkJEMkUzMDFDQ0VFNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQkUzOUM2ODkzRTIxMUU4OERGQUM4NUIzOUU2RjBENyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQkUzOUM2NzkzRTIxMUU4OERGQUM4NUIzOUU2RjBENyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNS41IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjI2YjQ3YzYxLWU3ODMtZTU0MC1hYjdiLWQ2OWE4MmNmMDJhYiIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmZiNDk0NDFlLTkwZTUtMTFlOC04MjhhLWJjZWE0Njk1Y2I3MiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pt23pewAAANCSURBVHjafFRLSFRRGP7OuWccZ3yMimNF2gMD6UGU9JCooGgZlj2wFtWqokVQBC21x6JNMJu2Fa1KioxaBdEmhNKioJIWBYWZjpnOe+bOffXdO+O1NDvDP+ec+z/Of77v/484javDRailmDMc/Hs4EL6+Esao4jK+DJOrXYUrouwqyg5iTkjhiQNJGUHDW3EHxxavx8hIEZpyP2plZWlt+2vhz/C+V0F3XqJ1pWrDWDiHCkejwkSCkvMd1Zwg4FohyHUtdAREB75UqQTCAQmb/hk0H96H6MHtcPQihGP76Xoz/2RlEJkHz5G8/4SBQk4eAUcZ0MapzpvQq6p3bEBj9078bxjxBPT7fQxalZPAqOTdk0xn0EId3vfcRO7TjwWdCx9H8K3nBi9SBwNqiL4pqfOWpDFmI4JEYhrPd11A6s3Xec6Zwc94t/sMsompcgAtRj9IkwFMyCcFyD6BJfg1HsfTjrMY63/lO8f7XmBg6ykkJ+LcLSGAoo+nP2YQyAAsuEKwjuiQ/RqaMW2mMXAoBrtgwEzlMXjkOiHO0aaZ2YpHrm2AeXgMJRAieWEaBJGHOpCHuAJEkbYN2IYFi0EyPMBBIwrUFRDoIu1I0d4V9RUNHlEsS6JQ4Gw505jG6o3boGoqPalZtwbfP7xAE1qYAZB0rVgN7pABrzhKwnJ5OIZfvbX1rdhx66SPQcftMwhHVmECkz206Z8pMO8KdrlYuL03jnRXc3s7jg9dQ3RDix+gcdNKdL2OIdq+BT+R3G/RdkZHGhVRVZ1T0LsjTS048ewiIq0N82isWdWIvc96EW5aQczy3WSv02VQEhTeXDuXZhZ7Lu1DZX1wwUIK1oew6dJRgmq7PufdwxWRj7AXtlgERkVCpca17fkPAntBSAmNNgZZK0BtJoy14hgutzHAsIAla6orEF0e8ZpptiPd2QUZqAhKpL9NwsxkSSTYwfZaNwODRpaCJicyBYx+nOKlSigrkqXKQZRHnIVquobJfxGm0NijijfOZaFEqbJC/AW9R0UrU6v9QZm7tyg5ipuBjmBWRWDeDUEq4b92ojwzvifwKsT2Hpy/njXB/O7QEYtCsFLOvNfvz7X8az8bxmn6LcAARMVabv9io1YAAAAASUVORK5CYII=" alt="Hours Researching"></div>
+                <div class="bg-features-count"><? echo $data['ep_hours']; ?></div>
+                <div class="bg-features-title">Hours Researching</div>
+            </div>
+        </div>
+        <div class="bg-features-item">
+            <div class="bg-item-wrapper">
+                <div class="bg-features-image"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAfCAYAAAAWRbZDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4JpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MEY3NDcyNEMzNDFFNjExQjU4QkJEMkUzMDFDQ0VFNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozODVCRDE2RTkzRTIxMUU4OERGQUM4NUIzOUU2RjBENyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozODVCRDE2RDkzRTIxMUU4OERGQUM4NUIzOUU2RjBENyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNS41IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjI2YjQ3YzYxLWU3ODMtZTU0MC1hYjdiLWQ2OWE4MmNmMDJhYiIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmZiNDk0NDFlLTkwZTUtMTFlOC04MjhhLWJjZWE0Njk1Y2I3MiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pr70gr4AAANFSURBVHjavJdNSFRRFMf/972nNpqljhqKKaWJpqEkFRVqLYpAImgh7doUfW8KWkRRRBCSFLUqaCe1aVVEFAWSfWxM/NYydaGGqWU6jo4zOfP634fi+GbeOOrkgf/cN3Pfvb97zznvvDsCS7AGlCWxuUZVUrephyWomwl3vAgTEs3mAnWVSvDr6qIuE/h8xbCbOK0q0O8nY/JYCfrtvLa6tY66SGjDsmBVOHHuB9ZXjSI2Tn63YxL70Y2NGLMaIlfyhLpCaH9YMLps0ySiq18j72gfEgMGbMEIytGDeLitoNPUPRlTQieCwghJmI2JjI2MEb4iFe+RgylELZhNgw870Qe61ri2sGHqOvV4LokEIXKmM7MdSeYRbk73EZvRgrSA2dZxE/u4y2z8ChWqztkkeim+oKyN2ytYLJMGOfU75HLauIC+LIwa0CT6wMq4/xfqbi2zKl4X7dxeWiiYjNE2ImPgBROHg+fDPQ4bWpEOD1RO4uDngqx1uwSa/ygoF4+0UqMnXsdAtle4NJkDi5gDa1DLWPYyR80WR2Qpe/IxhL9A45iCHK9cq4zZHGzONvjQnuETKVx36mLQbiQbUCf3a7YM/HaVKm02v5/GFfNNQwoKGjXdPirQYORHCMthBI+jHtsxQKcufOBdiLaZ71csgqn2qnpJq6pLfzeFAkYzhnzu3EdEc2es39qiREDJdCmhJnILrGtX9eIuVe+j33uC3cMpm0YUTNvEeP5a7md+EQEwtxZOAXUIZNK1SPOhLd0n0hhPO53WOyagckHFwcZEBcK82lJeMYMKCocVfSbLKz57BPaY+z3QQu1sQsESje7UnMJUv4LGMvA1pyHCJl9DW0Uf8sSAucsZUViScGKv6GRhC1q2ZiIK2yW+her2KFg9m1pNGFYTZtTGV6sAekvdUk7NfKjgxSGq4z9AZP5XVvjqDlLfDTcS+IZNEXWeGo0ARD7Rd6g8Qp5Znq74fkucPY+cNUpcEEv1iXqeiHZYgGrlognpCPvcSGgum2rqcJiwn9QlQp4u+/hN6AE2d6lCCxjLJR5QNwhyrPisT6CsNCeNEzmQ7Af7JN1NSEvE/lj4QY2DbIouimJ01PC6hiA93PH/BBgAMM8F2YnBduYAAAAASUVORK5CYII=" alt="Products Evaluated"></div>
+                <div class="bg-features-count"><? echo $data['ep_products']; ?></div>
+                <div class="bg-features-title">Products Evaluated</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<? } ?>

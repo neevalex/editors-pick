@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Editors Pick
  * Plugin URI:        https://github.com/neevalex/editors-pick
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       This plugin adds a block with the "editors pick" product showcase anywhere you want, with a simple [editors_pick id=xx] shortcode.
  * Version:           1.0.0
  * Author:            NeevAlex
  * Author URI:        https://neevalex.com
@@ -54,4 +54,8 @@ function run_editors_pick() {
 	$plugin->run();
 
 }
-run_editors_pick();
+
+if  (!(class_exists('ACF'))) {
+     add_action( 'admin_notices', 'acf_admin_notice__error' );
+} else {run_editors_pick();}
+

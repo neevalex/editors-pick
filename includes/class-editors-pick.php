@@ -73,7 +73,6 @@ class Editors_Pick {
 			$this->version = '1.0.0';
 		}
 		$this->plugin_name = 'editors-pick';
-
 		$this->load_dependencies();
 		$this->define_public_hooks();
 
@@ -101,12 +100,8 @@ class Editors_Pick {
 		 * core plugin.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-editors-pick-loader.php';
-
-		/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-editors-pick-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/editors-pick-public-display.php';
 
 		$this->loader = new Editors_Pick_Loader();
 
@@ -126,9 +121,14 @@ class Editors_Pick {
 	private function define_public_hooks() {
 
 		$plugin_public = new Editors_Pick_Public( $this->get_plugin_name(), $this->get_version() );
+		
 
-		//$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		//$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+        add_action( 'init', 'ep_register_my_cpts_editors_pick' );
+        register_ep_acf_fields();
+		add_shortcode( 'editors_pick', 'ep_func' );
 
 	}
 
@@ -171,5 +171,292 @@ class Editors_Pick {
 	public function get_version() {
 		return $this->version;
 	}
+
+}
+
+function acf_admin_notice__error() {
+	$class = 'notice notice-error';
+	$message = __( 'Editors Pick plugin requires ACF Custom fields plugin to be installed and active!', 'sample-text-domain' );
+
+	printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) ); 
+}
+
+
+function ep_func( $atts ) {
+	return ep_output_html(get_the_title($atts['id']), get_fields($atts['id']));
+}
+
+
+function ep_register_my_cpts_editors_pick() {
+
+	/**
+	 * Post Type: Editors Pick.
+	 */
+
+	$labels = array(
+		"name" => __( "Editors Pick", "twentyseventeen" ),
+		"singular_name" => __( "Editors Pick", "twentyseventeen" ),
+		"menu_name" => __( "Editors Pick", "twentyseventeen" ),
+		"all_items" => __( "All Editors Pick items", "twentyseventeen" ),
+	);
+
+	$args = array(
+		"label" => __( "Editors Pick", "twentyseventeen" ),
+		"labels" => $labels,
+		"description" => "Editors Pick items",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "editors_pick", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-star-half",
+		"supports" => array( "title" ),
+	);
+
+	register_post_type( "editors_pick", $args );
+}
+
+
+
+function register_ep_acf_fields() {
+if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array (
+	'key' => 'group_5c9bde953ea91',
+	'title' => 'Editors Pick',
+	'fields' => array (
+		array (
+			'key' => 'field_5c9c78c3cb943',
+			'label' => 'Image',
+			'name' => 'ep_image',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'preview_size' => 'medium',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array (
+			'key' => 'field_5c9c79690caa5',
+			'label' => 'Description (Optional)',
+			'name' => 'ep_description',
+			'type' => 'wysiwyg',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array (
+			'key' => 'field_5c9c7794f26f2',
+			'label' => 'Score',
+			'name' => 'ep_score',
+			'type' => 'number',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'min' => 1,
+			'max' => 100,
+			'step' => '',
+		),
+		array (
+			'key' => 'field_5c9c77a4f26f3',
+			'label' => 'Benefits',
+			'name' => 'ep_benefits',
+			'type' => 'repeater',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'collapsed' => '',
+			'min' => 0,
+			'max' => 0,
+			'layout' => 'table',
+			'button_label' => '',
+			'sub_fields' => array (
+				array (
+					'key' => 'field_5c9c77b0f26f4',
+					'label' => 'Benefit',
+					'name' => 'ep_benefit',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+			),
+		),
+		array (
+			'key' => 'field_5c9c77c7f26f5',
+			'label' => 'URL',
+			'name' => 'ep_url',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+		array (
+			'key' => 'field_5c9c77d4f26f6',
+			'label' => 'Sources',
+			'name' => 'ep_sources',
+			'type' => 'number',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'min' => 1,
+			'max' => '',
+			'step' => '',
+		),
+		array (
+			'key' => 'field_5c9c7804f26f7',
+			'label' => 'Reviews',
+			'name' => 'ep_reviews',
+			'type' => 'number',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'min' => 1,
+			'max' => '',
+			'step' => '',
+		),
+		array (
+			'key' => 'field_5c9c7814f26f8',
+			'label' => 'Hours',
+			'name' => 'ep_hours',
+			'type' => 'number',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'min' => 1,
+			'max' => '',
+			'step' => '',
+		),
+		array (
+			'key' => 'field_5c9c7821f26f9',
+			'label' => 'Products',
+			'name' => 'ep_products',
+			'type' => 'number',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'min' => 1,
+			'max' => '',
+			'step' => '',
+		),
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'editors_pick',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
+
+endif;
 
 }
