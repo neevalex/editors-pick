@@ -124,7 +124,7 @@ class Editors_Pick {
 		
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		//$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
         add_action( 'init', 'ep_register_my_cpts_editors_pick' );
         register_ep_acf_fields();
@@ -295,6 +295,27 @@ acf_add_local_field_group(array (
 			'append' => '',
 			'min' => 1,
 			'max' => 100,
+			'step' => '',
+		),
+		array (
+			'key' => 'field_5c9c7794f2fff',
+			'label' => 'Price',
+			'name' => 'ep_price',
+			'type' => 'number',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'min' => '',
+			'max' => '',
 			'step' => '',
 		),
 		array (
