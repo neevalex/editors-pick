@@ -54,7 +54,7 @@
 .rc-bg-top-product-wrap .ep_price {
     width: 100%;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .rc-bg-top-product-wrap .ep_price span {
@@ -62,6 +62,15 @@
     color: white;
     padding: 4px;
     border-radius: 6px;
+}
+
+
+.rc-bg-top-product-wrap .ep_old_price{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: line-through;
 }
 
 .rc-bg-top-product-wrap .product-rating-info-wrap.hover .top10-rate-category-wrap {
